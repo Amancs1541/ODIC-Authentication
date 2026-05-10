@@ -158,14 +158,4 @@ This architecture is commonly used in:
 - WAF Integration
 - Kubernetes Deployment
 
----
 
-# Author
-
-Your Name
-
----
-
-# License
-
-This project is for educational and learning purposes.
