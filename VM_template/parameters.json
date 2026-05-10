@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_ApacheODIC_name": {
+            "value": null
+        },
+        "disks_ApacheODIC_OsDisk_1_ede14c01ae15442886a1d2668e1fc513_externalid": {
+            "value": null
+        },
+        "networkInterfaces_apacheodic906_z2_externalid": {
+            "value": null
+        }
+    }
+}

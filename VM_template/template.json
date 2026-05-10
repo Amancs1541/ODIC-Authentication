@@ -1,0 +1,105 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "virtualMachines_ApacheODIC_name": {
+            "defaultValue": "ApacheODIC",
+            "type": "String"
+        },
+        "disks_ApacheODIC_OsDisk_1_ede14c01ae15442886a1d2668e1fc513_externalid": {
+            "defaultValue": "/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Compute/disks/ApacheODIC_OsDisk_1_ede14c01ae15442886a1d2668e1fc513",
+            "type": "String"
+        },
+        "networkInterfaces_apacheodic906_z2_externalid": {
+            "defaultValue": "/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Network/networkInterfaces/apacheodic906_z2",
+            "type": "String"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "type": "Microsoft.Compute/virtualMachines",
+            "apiVersion": "2025-04-01",
+            "name": "[parameters('virtualMachines_ApacheODIC_name')]",
+            "location": "eastus2",
+            "zones": [
+                "2"
+            ],
+            "properties": {
+                "hardwareProfile": {
+                    "vmSize": "Standard_FX2ms_v2"
+                },
+                "additionalCapabilities": {
+                    "hibernationEnabled": false
+                },
+                "storageProfile": {
+                    "imageReference": {
+                        "publisher": "canonical",
+                        "offer": "ubuntu-24_04-lts",
+                        "sku": "server",
+                        "version": "latest"
+                    },
+                    "osDisk": {
+                        "osType": "Linux",
+                        "name": "[concat(parameters('virtualMachines_ApacheODIC_name'), '_OsDisk_1_ede14c01ae15442886a1d2668e1fc513')]",
+                        "createOption": "FromImage",
+                        "caching": "ReadWrite",
+                        "managedDisk": {
+                            "storageAccountType": "Premium_LRS",
+                            "id": "[parameters('disks_ApacheODIC_OsDisk_1_ede14c01ae15442886a1d2668e1fc513_externalid')]"
+                        },
+                        "deleteOption": "Delete",
+                        "diskSizeGB": 30
+                    },
+                    "dataDisks": [],
+                    "diskControllerType": "NVMe"
+                },
+                "osProfile": {
+                    "computerName": "[parameters('virtualMachines_ApacheODIC_name')]",
+                    "adminUsername": "azureuser",
+                    "linuxConfiguration": {
+                        "disablePasswordAuthentication": true,
+                        "ssh": {
+                            "publicKeys": [
+                                {
+                                    "path": "/home/azureuser/.ssh/authorized_keys",
+                                    "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDEWQTauIhGegA5ehVU3dBKUQYKgqaH627NTq7vCSZjMbMZDhp2Zmq4UvC/ro/AhtEq5pI7FbvrmelG06nyzQc96FUJ9ObYrUxndHFOAVaR+hKw0lIuYE3tGcByjpOeqkCXbTws3VJQ2iKz7fxrRmRYU/RirjOxYQYb/XY9PD5E3SjOjbj665ihh3nPtW8t2EE2vgSpKBKMg/PKkFhEF4eSpR9XKH6Ccs2R8UYeCsEnai4QCqUlUXs56hpuFPW7BZuqKa6Csk0zVrDFWDndpRWb4Z19wbcwGmoIGnYrizOMFohCg3xY2vE1lPmbAOarhUhmWmsng3V8HZ44UtHFz/+esKPXUQYcNO2KkduoKNR+yFnfesH2Ad2GsuvyfIG8POtA+oRycKm5WxjlWEz11nLwnPWJH09qVl2sqBCqJi5gNByza87s7xednX41ieHcW3dH7puU20j0QNWzhr1ZSJGX6JYfk598aZiybSVIUxgRi/3zzJHDuT8e1itl1Lhizg0= generated-by-azure"
+                                }
+                            ]
+                        },
+                        "provisionVMAgent": true,
+                        "patchSettings": {
+                            "patchMode": "ImageDefault",
+                            "assessmentMode": "ImageDefault"
+                        }
+                    },
+                    "secrets": [],
+                    "allowExtensionOperations": true,
+                    "requireGuestProvisionSignal": true
+                },
+                "securityProfile": {
+                    "uefiSettings": {
+                        "secureBootEnabled": true,
+                        "vTpmEnabled": true
+                    },
+                    "securityType": "TrustedLaunch"
+                },
+                "networkProfile": {
+                    "networkInterfaces": [
+                        {
+                            "id": "[parameters('networkInterfaces_apacheodic906_z2_externalid')]",
+                            "properties": {
+                                "deleteOption": "Detach"
+                            }
+                        }
+                    ]
+                },
+                "diagnosticsProfile": {
+                    "bootDiagnostics": {
+                        "enabled": true
+                    }
+                }
+            }
+        }
+    ]
+}

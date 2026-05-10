@@ -1,0 +1,12 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "sites_WebODIC_name": {
+            "value": null
+        },
+        "serverfarms_ODICserverice_externalid": {
+            "value": null
+        }
+    }
+}

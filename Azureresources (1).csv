@@ -1,0 +1,10 @@
+﻿NAME,TYPE,LOCATION,RESOURCE LINK
+"ApacheODIC","Virtual machine","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Compute/virtualMachines/ApacheODIC"
+"ApacheODIC-nsg","Network security group","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Network/networkSecurityGroups/ApacheODIC-nsg"
+"ApacheODIC-vnet","Virtual network","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Network/virtualNetworks/ApacheODIC-vnet"
+"apacheodic906_z2","Network Interface","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Network/networkInterfaces/apacheodic906_z2"
+"ApacheODIC_key","SSH key","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Compute/sshPublicKeys/ApacheODIC_key"
+"ApacheODIC_OsDisk_1_ede14c01ae15442886a1d2668e1fc513","Disk","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_PRO/providers/Microsoft.Compute/disks/ApacheODIC_OsDisk_1_ede14c01ae15442886a1d2668e1fc513"
+"OdicServer","Public IP address","East US 2","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Network/publicIPAddresses/OdicServer"
+"ODICserverice","App Service plan","West US 3","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Web/serverFarms/ODICserverice"
+"WebODIC","App Service","West US 3","https://portal.azure.com#resource/subscriptions/e46617eb-bcd6-4513-a81e-a314f57049e2/resourceGroups/ODIC_Pro/providers/Microsoft.Web/sites/WebODIC"
